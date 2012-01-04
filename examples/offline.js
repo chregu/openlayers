@@ -22,10 +22,7 @@
 
   init = function() {
     var map;
-    db = window.openDatabase("mydb", "1.0", "my first database", 2 * 1024 * 1024);
-    db.transaction(function(tx) {
-      return tx.executeSql("CREATE TABLE foo (url unique, data)");
-    });
+   
     return map = new OpenLayers.Map({
       div: "map",
       theme: null,
@@ -38,7 +35,6 @@
       ],
       layers: [
         new OpenLayers.Layer.OSMoffline("OpenStreetMap", null, {
-          async: true,
           transitionEffect: "resize"
         })
       ],
