@@ -41,7 +41,7 @@ If you want to be able to use it really offline (not only the tiles from local s
 
 `offline.html` and `offline.js` contain this basic example, it's mostly copy&paste code from another example
 
-`offline/64base.php` is the simple PHP proxy. It just takes the image tile from the map server specified in the src attribute and converts it to base64. Be aware that you shouldn't put this file onto a public server as it is, as it doesn't contain any protection against misusing it, anyone could get any page from anywhere with it.
+`offline/64base.php` is the simple PHP proxy. It just takes the image tile from the map server specified in the src attribute and converts it to base64. Be aware that it's missuse protection is quite simple, it only checks if the end-point url starts with http://tile.openstreetmap.org/ (which should help a lot against missusing) and does only have characters it should have.
 
 `offline/manifest.php` is the [offline Manifest](http://www.w3.org/TR/html5/offline.html). It uses PHP to send the correct Content-Type (otherwise it doesn't work)
 
