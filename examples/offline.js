@@ -22,7 +22,10 @@
 
   init = function() {
     var map;
-   
+    
+    //create OSMofflineClass which inherits from OpenLayers.Layer.OSM and adds offline capabilities
+    var OSMofflineClass = OpenLayers.Class( OpenLayers.Layer.OSM, OpenLayers.Layer.OSMoffline);
+        
     return map = new OpenLayers.Map({
       div: "map",
       theme: null,
@@ -34,7 +37,7 @@
         }), new OpenLayers.Control.ZoomPanel()
       ],
       layers: [
-        new OpenLayers.Layer.OSMoffline("OpenStreetMap", null, {
+        new OSMofflineClass("OpenStreetMap", null, {
           transitionEffect: "resize"
         })
       ],
