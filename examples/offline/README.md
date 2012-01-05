@@ -1,4 +1,4 @@
-# Offline Mode for OSM Maps
+# Offline Mode for OpenLayers Maps
 
 This is a proof of concept for having Maps tile available offline
 
@@ -8,7 +8,7 @@ The main goal for this proof of concept was to support offline mode on mobile de
 
 WebSQL has only an asynchronous interface, which makes programming for it a little bit harder, but luckily enough OpenLayers supports also an async interface for getting the URLs of the image
 
-In this proof of concept, we extended OpenLayers.Layer.OSM, therefor it only works for that kind of layers. I guess it's easy to use the same approach for other layers as well.
+In this proof of concept, we initially extended OpenLayers.Layer.OSM, therefor it is only tested for that kind of layers. In the meantime I added a more general approach with adding OpenLayer.Layer.Offline "dynamically" to a Layer Class, but I didn't test it with other types of layers.
 
 ## How it works
 
@@ -47,7 +47,7 @@ If you want to be able to use it really offline (not only the tiles from local s
 
 `offline/XHConn.js` is a very simple XMLHTTPRequest wrapper I use for simple things.
 
-`../lib/OpenLayers/Layer/OSMoffline.js` contains the new class which enables offline storage. It misses some features like expiration of tiles. Once in the storage, they never go away.
+`../lib/OpenLayers/Layer/Offline.js` contains the new properties and methods which enables offline storage. It misses some features like expiration of tiles. Once in the storage, they never go away.
 
 
 
