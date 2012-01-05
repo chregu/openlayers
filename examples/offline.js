@@ -38,7 +38,8 @@
       ],
       layers: [
         new OSMofflineClass("OpenStreetMap", null, {
-          transitionEffect: "resize"
+          transitionEffect: "resize",
+          parentClass: OpenLayers.Layer.OSM,
         })
       ],
       center: new OpenLayers.LonLat(742000, 5861000),
