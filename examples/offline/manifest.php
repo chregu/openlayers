@@ -58,7 +58,7 @@ XHConn.js
 ../../lib/OpenLayers/Layer/GeoRSS.js
 ../../lib/OpenLayers/Layer/Boxes.js
 ../../lib/OpenLayers/Layer/XYZ.js
-../../lib/OpenLayers/Layer/OSMoffline.js
+../../lib/OpenLayers/Layer/Offline.js
 ../../lib/OpenLayers/Layer/Bing.js
 ../../lib/OpenLayers/Layer/TMS.js
 ../../lib/OpenLayers/Layer/TileCache.js
